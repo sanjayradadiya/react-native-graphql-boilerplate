@@ -1,0 +1,24 @@
+# // TODO: [orderRequest] need to make it development when we merge order branch.
+schema: "https://localhost:3005/graphql"
+overwrite: true
+
+documents: "src/**/*.graphql"
+generates:
+  src/types/schema.ts:
+    plugins:
+      - typescript
+    config:
+      constEnums: true
+  src:
+    preset: near-operation-file
+    presetConfig:
+      extension: .ts
+      baseTypesPath: ~src/types/schema
+      folder: generated
+    plugins:
+      - typescript-operations
+      - typescript-urql
+    config:
+      urqlImportFrom: "@services/urql"
+      withComponent: false
+      withHooks: true

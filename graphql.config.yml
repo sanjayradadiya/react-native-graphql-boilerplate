@@ -1,0 +1,21 @@
+schema: schema.graphql
+extensions:
+  endpoints:
+    development:
+      description: development
+      url: http://localhost:3005/graphql
+      headers:
+        user-agent: JS GraphQL
+      introspect: false
+    staging:
+      description: staging
+      url: http://localhost:3005/graphql
+      headers:
+        user-agent: JS GraphQL
+      introspect: false
+    rewrite:
+      description: rewrite
+      url: http://localhost:3005/graphql
+      headers:
+        user-agent: JS GraphQL
+      introspect: false
